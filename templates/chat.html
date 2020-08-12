@@ -1,0 +1,32 @@
+<html>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!--import for jquery and socketio-->
+    <h1>Chat!</h1>
+    <div id='messages'></div>
+    <body>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            var socket = io.connect('http://127.0.0.1:5000');
+            //for now, maybe need to change for heroku
+            socket.on('message', function(message) {
+                $('#messages').append('<div>'+message+'</div>');
+            })
+
+            socket.on('connect', function() {
+                socket.emit('update')
+            })
+
+            $('#submit').on('click', function() {
+                console.log($('#message').val());
+                // socket.emit('update')
+                socket.emit('message', $('#message').val());
+                $('#message').val(''); //reset to make it empty
+            })
+        })
+        </script>
+        <input type="text" id="message" placeholder="Input message">
+        <button id="submit">Submit!</button>
+
+    </body>
+</html>
