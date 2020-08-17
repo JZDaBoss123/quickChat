@@ -18,8 +18,6 @@
             })
 
             $('#submit').on('click', function() {
-                console.log($('#message').val());
-                // socket.emit('update')
                 socket.emit('message', $('#message').val());
                 $('#message').val(''); //reset to make it empty
             })

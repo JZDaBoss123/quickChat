@@ -1,0 +1,18 @@
+
+h1 {
+    color: red;
+}
+
+
+.form-control{
+    margin-bottom: 20px;
+}
+.modal-content{
+    margin-top: 150px;
+}
+
+body {
+    background-color: cyan;
+    background: url("images/bkg.jpg") no-repeat fixed center;
+    background-size: 100% 100%;
+}

@@ -46,6 +46,8 @@ def chat():
 def registerUser(data):
     sid = request.sid
     user = data['u']
+    if not user:
+        user = "Anonymous"
     language = data['l']
     room = data['r']
     uid = data['id']

@@ -4,7 +4,7 @@
     <!--import for jquery and socketio-->
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesheet10.css') }}">
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
             crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
@@ -12,9 +12,6 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
         <!--import for bootstrap-->
-    <h1>Welcome to quickChat!</h1> <br>
-    <p>Please fill in the following information to get started.</p> <br>
-    <p>Put in a room code to match with friends.</p> <br>
     </head>
     <body>
         <script type="text/javascript">
@@ -37,34 +34,41 @@
             })
         })
         </script>
-
-        <input type="text" id="username" placeholder="Username" class="form-group"> <br><br>
-        <label for="language">Choose your language</label>
-        <!--language codes for googletrans api-->
-        <select id="language" class="form-group">
-            <option value="af">Afrikaans</option>
-            <option value="ar">Arabic</option>
-            <option value="bg">Bulgarian</option>
-            <option value="ca">Catalan</option>
-            <option value="zh-cn">Chinese (Simplified)</option>
-            <option value="zh-tw">Chinese (Traditional)</option>
-            <option value="en">English</option>
-            <option value="tl">Filipino</option>
-            <option value="fr">French</option>
-            <option value="de">German</option>
-            <option value="el">Greek</option>
-            <option value="hi">Hindi</option>
-            <option value="id">Indonesian</option>
-            <option value="it">Italian</option>
-            <option value="ja">Japanese</option>
-            <option value="ko">Korean</option>
-            <option value="no">Norweigan</option>
-            <option value="ru">Russian</option>
-            <option value="es">Spanish</option>
-            <option value="th">Thai</option>
-        </select><br><br>
-        <input type="text" id="roomNumber" placeholder="Room Key" class="form-group"> <br><br>
-        
-        <button id="submit">Submit!</button>
+        <div class = "modal-dialog text-center">
+            <div class = "modal-content">
+                <h1>Welcome to QuickChat!</h1> <br>
+                <p>Please fill in the following information to get started, and put in a unique room code to match with friends.</p> <br>
+            <input type="text" id="username" placeholder="Username" class="form-group" required> 
+            <div class="invalid-feedback">Please enter a username!</div>
+            <label for="language">Choose your language:</label> 
+            <!--language codes for googletrans api-->
+            <select id="language" class="form-control-sm">
+                <option value="af">Afrikaans</option>
+                <option value="ar">Arabic</option>
+                <option value="bg">Bulgarian</option>
+                <option value="ca">Catalan</option>
+                <option value="zh-cn">Chinese (Simplified)</option>
+                <option value="zh-tw">Chinese (Traditional)</option>
+                <option value="en">English</option>
+                <option value="tl">Filipino</option>
+                <option value="fr">French</option>
+                <option value="de">German</option>
+                <option value="el">Greek</option>
+                <option value="hi">Hindi</option>
+                <option value="id">Indonesian</option>
+                <option value="it">Italian</option>
+                <option value="ja">Japanese</option>
+                <option value="ko">Korean</option>
+                <option value="no">Norweigan</option>
+                <option value="ru">Russian</option>
+                <option value="es">Spanish</option>
+                <option value="th">Thai</option>
+            </select>
+            <br>
+            <input type="text" id="roomNumber" placeholder="Room Key" class="form-group"> 
+            <br>
+            <button id="submit" class="btn btn-primary">Submit!</button>
+            </div>
+     </div>
     </body>
 </html>
