@@ -4,7 +4,7 @@
     <!--import for jquery and socketio-->
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/chatstyles1.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/chatstyles16.css') }}">
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
             crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
@@ -13,14 +13,19 @@
             crossorigin="anonymous"></script>
         <!--import for bootstrap-->
     </head>
-    <div id='messages' class="chat-messages"></div>
+    <div class="modal-dialog text-center">
+        <div class = "header">
+        <h1>QuickChat</h1>
+        </div>
+    </div>
+    <div id="messages" class="chat-messages"> </div>
     <body>
         <script type="text/javascript">
         $(document).ready(function() {
             var socket = io.connect('http://127.0.0.1:5000');
             //for now, maybe need to change for heroku
             socket.on('message', function(message) {
-                $('#messages').append('<div>'+message+'</div>');
+                $('#messages').append('<div>' + message + '</div>');
             })
 
             socket.on('connect', function() {
@@ -35,7 +40,7 @@
         </script>
         <div class="row chat-box">
             <div class="col">
-        <input type="text" id="message" placeholder="Type your message here" class = "form-group">
+        <textarea id="message" placeholder="Type your message here" cols="1000" rows ="1" class = "form-control"></textarea>
             </div>
             <div class="col">
         <button id="submit" class="btn btn-primary">Send!</button>

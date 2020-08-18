@@ -1,0 +1,37 @@
+.header {
+    background-color: cyan;
+    background: url("images/bkg.jpg") no-repeat fixed center;
+    background-size: 100% 100%;
+}
+.chat-messages {
+    margin-top: 10px;
+    height: 800px;
+    width: 1450px;
+    overflow: auto;
+    overflow-wrap: normal;
+    color: darkblue;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* font-weight: bold; */
+    position:relative;
+    left: 200;
+}
+
+p {
+    color: red;
+}
+
+.chat-box {
+    position: fixed;
+    left: 600;
+    bottom: 25;
+}
+
+.chat-box textarea{
+    resize: none;
+}
+
+h1 {
+    color: white;
+    font-weight: bold;
+}
