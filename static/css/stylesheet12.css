@@ -9,6 +9,7 @@ h1 {
 }
 .modal-content{
     margin-top: 150px;
+    opacity: .95;
 }
 
 body {

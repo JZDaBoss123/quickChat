@@ -62,6 +62,8 @@ def updateID():
 
 @socketio.on('message')
 def handleMessage(message):
+    if not message:
+        return
     translator = googletrans.Translator()
     sender = sidMap[request.sid]
     senderName = sender.username

@@ -1,0 +1,18 @@
+body {
+    background-color: cyan;
+    background: url("images/bkg.jpeg") no-repeat fixed center;
+    background-size: 100% 100%;
+}
+
+.chat-messages p{
+    color: red;
+}
+
+p {
+    color: red;
+}
+
+.chat-box {
+    position: fixed;
+    bottom: 0;
+}
